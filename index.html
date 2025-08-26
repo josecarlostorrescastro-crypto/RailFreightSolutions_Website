@@ -1,124 +1,288 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Company Overview</title>
+    <title>Rail Freight Solutions - Germany</title>
+
+    <!-- Google Fonts for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Basic CSS for futuristic look -->
     <style>
-        /* Basic reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
 
         body {
-            background-color: #f7f7f7;
-            color: #333;
+            background-color: #0a0f1a; /* dark futuristic background */
+            color: #e0e0e0;
             line-height: 1.6;
         }
 
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-        }
-
-        nav {
-            background-color: #0066cc;
-            padding: 10px 20px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
+        a {
+            color: #00f6ff;
             text-decoration: none;
-            font-weight: bold;
         }
 
-        nav a:hover {
+        a:hover {
             text-decoration: underline;
         }
 
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-            background-color: white;
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #0a0f1a, #0a0f1a 70%, #00f6ff 30%);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: #00f6ff;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 80vh;
+            background: url('images/hero-train.jpg') no-repeat center center/cover; /* Replace with your hero image */
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top:0; left:0;
+            width:100%; height:100%;
+            background-color: rgba(0,0,0,0.6); /* Dark overlay for readability */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #00f6ff;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            font-family: 'Orbitron', sans-serif;
             margin-bottom: 20px;
-            border-radius: 8px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 20px;
+            background-color: #00f6ff;
+            color: #0a0f1a;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #00d1e0;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
         }
 
         section h2 {
-            color: #004080;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            color: #00f6ff;
+            margin-bottom: 50px;
+            font-size: 2rem;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .service-card {
+            background-color: #121a2a;
+            border: 1px solid #00f6ff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card img {
+            max-width: 100px;
             margin-bottom: 20px;
         }
 
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: #00f6ff;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #cfd8dc;
+        }
+
+        /* About Section */
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #cfd8dc;
+        }
+
+        /* Video Section */
+        .video-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-section video {
+            max-width: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00f6ff;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #004080;
-            color: white;
+            padding: 30px 20px;
+            background-color: #0a0f1a;
+            border-top: 1px solid #00f6ff;
+            font-size: 0.9rem;
+            color: #cfd8dc;
         }
+
+        footer a {
+            color: #00f6ff;
+        }
+
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Acme Logistics</h1>
-    <p>Delivering Excellence in Transportation & Rail Freight</p>
-</header>
+    <!-- Header -->
+    <header>
+        <h1>Rail Freight Solutions</h1>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<nav>
-    <a href="#about">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Innovative Rail Freight Solutions Across Germany</h2>
+            <p>We provide end-to-end rail freight transportation, maintenance, simulation, and big data solutions to optimize logistics and operations.</p>
+            <a href="#services" class="btn">Discover Our Services</a>
+        </div>
+    </section>
 
-<section id="about">
-    <h2>About Us</h2>
-    <p>Acme Logistics is a leading rail freight operator providing innovative, data-driven logistics solutions across Europe. With over 50 years of experience, we ensure efficient, sustainable, and reliable transportation services for all industries.</p>
-</section>
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <!-- Replace image source with your own -->
+                <img src="images/transportation.png" alt="Transportation Icon">
+                <h3>Rail Transportation</h3>
+                <p>Reliable, efficient, and sustainable cargo transportation across Germany and Europe.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/maintenance.png" alt="Maintenance Icon">
+                <h3>Maintenance Solutions</h3>
+                <p>Predictive and preventive maintenance services ensuring maximum availability of rolling stock.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/simulation.png" alt="Simulation Icon">
+                <h3>Simulation & Optimization</h3>
+                <p>Advanced digital twin simulations to optimize network capacity, train configurations, and terminal operations.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/bigdata.png" alt="Big Data Icon">
+                <h3>Big Data & Analytics</h3>
+                <p>Real-time data analytics and KPIs for smarter decision-making and operational efficiency.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="services">
-    <h2>Our Services</h2>
-    <ul>
-        <li>Rail Freight Transport</li>
-        <li>Warehouse & Supply Chain Optimization</li>
-        <li>Predictive Maintenance & Asset Management</li>
-        <li>Real-Time Logistics Monitoring</li>
-    </ul>
-</section>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Rail Freight Solutions</h2>
+        <div class="about">
+            <p>Based in Germany, Rail Freight Solutions is at the forefront of modern rail logistics.  
+            We integrate cutting-edge technology, predictive maintenance, and advanced analytics to provide our customers with innovative solutions that increase efficiency, reduce costs, and improve sustainability across the rail freight sector.</p>
+        </div>
+    </section>
 
-<section id="team">
-    <h2>Our Team</h2>
-    <p>Our team combines expertise in operations, engineering, and digital logistics to deliver exceptional value to our clients. Key leaders include:</p>
-    <ul>
-        <li>Jane Smith – CEO</li>
-        <li>John Doe – COO</li>
-        <li>Maria Gonzalez – CTO</li>
-    </ul>
-</section>
+    <!-- Video Section -->
+    <section id="video">
+        <h2>Our Operations in Action</h2>
+        <div class="video-section">
+            <!-- Replace the source with your video file -->
+            <video controls>
+                <source src="videos/rail-operations.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: info@acmelogistics.com</p>
-    <p>Phone: +49 123 456 7890</p>
-    <p>Address: 123 Rail Street, Hamburg, Germany</p>
-</section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="about">
+            <p>Email: <a href="mailto:info@railfreightsolutions.de">info@railfreightsolutions.de</a><br>
+            Phone: +49 30 1234567<br>
+            Address: Berlin, Germany</p>
+        </div>
+    </section>
 
-<footer>
-    &copy; 2025 Acme Logistics. All rights reserved.
-</footer>
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Rail Freight Solutions | All rights reserved | <a href="#">Privacy Policy</a>
+    </footer>
 
 </body>
 </html>
